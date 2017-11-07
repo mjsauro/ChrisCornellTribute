@@ -9,42 +9,47 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Scroll Effect -->
+
 </head>
 
-<body ng-app="myApp">
-    <nav class="navbar navbar-default">
+<body id="bod" ng-app="myApp" ng-controller="bandController">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a ng-href="#!/main" class="navbar-brand">Chris Cornell</a>
+                <a href="#jumbo" class="navbar-brand">Chris Cornell</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a ng-href="#!/soundgarden">Soundgarden</a></li>
-                    <li><a ng-href="#!/audioslave">Audioslave</a></li>
-                    <li><a ng-href="#!/templeofthedog">Temple of the Dog</a></li>
-                    <li><a ng-href="#!/solowork">Solo Work</a></li>
+                    <li><a href="#soundgarden">Soundgarden</a></li>
+                    <li><a href="#temple">Temple of the Dog</a></li>
+
+                    <li><a href="#audioslave">Audioslave</a></li>
+                    <li><a href="#solo">Solo Work</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="container" ng-controller="bandController">
-        <div class="row">
-            <bands info="b" ng-repeat="b in band"></bands>
+    <div class="container-fluid">
+        <div class="jumbotron" id="jumbo">
+            <h1>Chris Cornell</h1>
         </div>
-        <div>
-        </div>
+        <bands info="b" ng-repeat="b in band"></bands>
     </div>
-
 </body>
 
 <!-- scripts -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js "></script>
@@ -57,5 +62,24 @@
 
 <!-- directives -->
 <script src="js/directives/bands.js"></script>
+
+<!-- scroll effect -->
+<script>
+    $(document).ready(function() {
+        $('a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+
+            var target = this.hash;
+            var $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 900, 'swing', function() {
+                window.location.hash = target;
+            });
+        });
+    });
+
+</script>
 
 </html>
