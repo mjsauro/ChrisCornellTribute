@@ -1,4 +1,4 @@
-app.controller('bandController', ['$scope', function ($scope) {
+app.controller('bandController', ['$scope', '$sce', function ($scope, $sce) {
     //$scope.videoSource = $sce.trustAsResourceUrl("//www.youtube.com/embed/9B7te184ZpQ?rel=0");
     $scope.band = [
         {
@@ -10,7 +10,7 @@ app.controller('bandController', ['$scope', function ($scope) {
             albums: [
                      "Ultramega OK", "Louder Than Love", "Badmotorfinger", "Superunknown", "Down on the Upside", "King Animal"
                      ],
-            video: "https://www.youtube.com/watch?v=3mbBbFH9fAgj",
+            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
 
 
     }, {
@@ -22,7 +22,7 @@ app.controller('bandController', ['$scope', function ($scope) {
             albums: [
                      "Temple of the Dog"
                      ],
-            video: "https://www.youtube.com/watch?v=3mbBbFH9fAgj",
+            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
 
     }, {
             bandID: "audioslave",
@@ -33,7 +33,7 @@ app.controller('bandController', ['$scope', function ($scope) {
             albums: [
                      "Audioslave", "Out of Exile", "Euphoria Morning"
                      ],
-            video: "https://www.youtube.com/watch?v=3mbBbFH9fAgj",
+            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
 
     }, {
             bandID: "solo",
@@ -44,7 +44,7 @@ app.controller('bandController', ['$scope', function ($scope) {
             albums: [
                      "Euphoria Morning", "Carry On", "Scream", "Higher Truth"
                      ],
-            video: "https://www.youtube.com/watch?v=3mbBbFH9fAgj",
+            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
 
     }
     ]
