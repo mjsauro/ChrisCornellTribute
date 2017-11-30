@@ -2,14 +2,15 @@
     <div class="bands" id={{info.bandID}}>
         <div class="row">
             <div class="col-md-5 col-md-offset-1">
-                <div class="panel panel-default">
+                <div class="panel transparent">
                     <div class="panel-heading">
-                        <div>{{info.bandName}}</div>
+                        <h2 class="text-center">{{info.bandName}}</h2>
                     </div>
                     <div class="panel-body">
-                        <div>{{info.description}}</div>
+                        <p class="lead">{{info.description}}</p>
+                        <p class="lead">&quot;{{info.quote}}&quot;</p>
                     </div>
-                    <blockquote>{{info.quote}}</blockquote>
+
                     <ul>
                         <h3>Albums</h3>
                         <li ng-repeat="album in info.albums">{{album}}
@@ -17,14 +18,25 @@
                     </ul>
                 </div>
             </div>
+
             <div class=" col-md-5 ">
                 <div><img class="img-responsive " ng-src="{{info.bandImg}} "></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <iframe width="560" height="315" src="{{info.video}}">
-</iframe>
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel transparent">
+                        <div class="panel-heading">
+                            <h2 class="text-center">{{info.songName}}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <div class="video-responsive">
+                                <iframe width="560" height="315" src="{{info.video}}"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

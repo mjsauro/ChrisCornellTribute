@@ -10,6 +10,7 @@ app.controller('bandController', ['$scope', '$sce', function ($scope, $sce) {
             albums: [
                      "Ultramega OK", "Louder Than Love", "Badmotorfinger", "Superunknown", "Down on the Upside", "King Animal"
                      ],
+            songName: "Black Hole Sun",
             video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
 
 
@@ -22,7 +23,9 @@ app.controller('bandController', ['$scope', '$sce', function ($scope, $sce) {
             albums: [
                      "Temple of the Dog"
                      ],
-            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
+            songName: "Hunger Strike",
+            video: $sce.trustAsResourceUrl("https://youtube.com/embed/VUb450Alpps"),
+
 
     }, {
             bandID: "audioslave",
@@ -33,9 +36,12 @@ app.controller('bandController', ['$scope', '$sce', function ($scope, $sce) {
             albums: [
                      "Audioslave", "Out of Exile", "Euphoria Morning"
                      ],
-            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
+            songName: "Like a Stone",
 
-    }, {
+            video: $sce.trustAsResourceUrl("https://youtube.com/embed/7QU1nvuxaMA"),
+
+                    },
+        {
             bandID: "solo",
             bandName: "Solo Work",
             bandImg: "img/solo.jpg",
@@ -44,9 +50,10 @@ app.controller('bandController', ['$scope', '$sce', function ($scope, $sce) {
             albums: [
                      "Euphoria Morning", "Carry On", "Scream", "Higher Truth"
                      ],
-            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/3mbBbFH9fAg"),
+            songName: "Preaching the End of the World",
+            video: $sce.trustAsResourceUrl("https://www.youtube.com/embed/CDhh3DfbiCo"),
 
-    }
-    ]
+                    }
+                    ]
 
-}]);
+            }]);

@@ -27,6 +27,30 @@ ul {
     }
 }
 
+.row {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.transparent {
+    background-color: rgba(255, 255, 250, 0.5);
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 //ids
 #audioslave {
     background: #515352;
@@ -46,5 +70,17 @@ ul {
 
 #temple {
     background: #8283B1;
+
+}
+
+@media only screen and (max-width:768px) {
+
+    body {
+        padding-top: 0px;
+    }
+
+    .navbar-fixed-top {
+        position: static
+    }
 
 }
